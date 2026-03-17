@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@v6.0.2
       - uses: actions/setup-node@v4
         with:
-          node-version: "24"
+          node-version: "22"
       - run: npm ci || npm i
       - run: npm test
 
@@ -29,11 +29,11 @@ jobs:
     needs: test          # ← build waits for test to pass
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
       - uses: actions/configure-pages@v5
       - uses: actions/setup-node@v4
         with:
-          node-version: "24"
+          node-version: "22"
       - run: npm ci || npm i
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
